@@ -17,7 +17,7 @@ Who uses Python?
 What is Python?
 ===============
 
-A dynamically typed, interpreted, general purpose programming language
+A object-oriented, dynamically typed, interpreted, general purpose programming language
 Open source, BSD-like license
 Supported on lots of platforms
 
@@ -51,10 +51,18 @@ Examples:
 
 Dynamically Typed
 =================
-Variable's ~~properties~~ are important, not it's data type.
+Variable's *properties* are important, not it's data type.
 
 Also known as "duck typing".
 	"If it walks like a duck and quacks like a duck, it's a duck".
+
+Object-Oriented
+===============
+Data and the functions related to it is associated through objects
+Objects are instances classes.
+More on this later.
+
+
 
 
 Running Python
