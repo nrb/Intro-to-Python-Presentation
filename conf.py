@@ -40,7 +40,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'intro_to_python'
+project = u'An Introduction to Python'
 copyright = u'2011, Nolan Brubaker'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -178,7 +178,7 @@ htmlhelp_basename = 'intro_to_pythondoc'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'intro_to_python.tex', u'intro\\_to\\_python Documentation',
+  ('index', 'intro_to_python.tex', u'An Introduction to Python',
    u'Nolan Brubaker', 'manual'),
 ]
 
