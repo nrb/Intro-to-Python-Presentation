@@ -44,7 +44,7 @@ Dynamically Typed
 Languages like Chapel, C, Java require variables to have their type declared on creation
 Python does not; a variable can hold any kind of value.
 
-Examples:
+Examples::
 
 	a = "a string"
 	a = 1
@@ -67,5 +67,5 @@ More on this later.
 
 Running Python
 ==============
-From your shell prompt, type:
+From your shell prompt, type::
 	$ python
