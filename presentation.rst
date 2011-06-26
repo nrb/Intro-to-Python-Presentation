@@ -16,7 +16,6 @@ Who uses Python?
 
 What is Python?
 ===============
-
 A object-oriented, dynamically typed, interpreted, general purpose programming language
 Open source, BSD-like license
 Supported on lots of platforms
@@ -31,7 +30,6 @@ Used for lots of different programming tasks
 	
 Interpreted
 ===========
-
 Python code is translated to machine code at runtime, not in a prior compilation step.
 
 Several interpreters
