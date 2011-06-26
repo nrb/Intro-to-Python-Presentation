@@ -6,12 +6,4 @@
 An Introduction to Python
 =========================
 
-Contents:
-
-.. toctree::
-   :maxdepth: 2
-
-
-
-
 .. include:: presentation.rst
