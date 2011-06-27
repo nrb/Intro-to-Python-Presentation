@@ -250,6 +250,9 @@ Interlude - Using Python Files
 ==============================
 You can use ``gedit`` to edit Python files, saving them with the extension ``.py``.
 
+Add this at the top, with your code indented underneath.:
+``if __name__ == "__main__":``
+
 Then, you can run the files with this command:::
         $ python my_file.py
 
@@ -334,6 +337,8 @@ Example:::
         ...             self.breed = breed
         ...     def bark(self):
         ...             print '%s says, "Woof!"' % self.name
+        ...     def bark(self, target):
+        ...             print "%s barks at %s!" % (self.name, target.name)
         ... 
         >>> fido = Dog(name="Fido", breed="Black Lab")
         >>> fido.bark()
@@ -348,6 +353,7 @@ All classes:
                 * This is a "magic method" that Python uses.
                 * Similar to C++/Java constructors - it sets up initial state
 All methods take ``self`` as the first argument
+Different methods can have the same name, if they take different number of arguments.
 ``self`` is *not* passed in when you call the function; Python's interpreter uses it, not the programmer.
 Variables attached to ``self`` can be accessed in any other method in that class.
 I snuck in named arguments there; done for clarity.
@@ -380,6 +386,10 @@ except for the parent class, which looks like
 ``class ParentClass(object)``
 Why?  
         * ``object`` is a type, just like ``int`` or ``str``.  Helps Python allocate memory correctly.
+
+Exercise 4
+==========
+Create a Python class that 
 
 
 
