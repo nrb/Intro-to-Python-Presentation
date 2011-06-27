@@ -295,6 +295,7 @@ Object Oriented Programming
 ===========================
 Object-oriented programming tries to model program strutures after things in the real world.
 Objects have *properties* that describe them (the bike is red), and *methods* that make them do things (the man runs).
+Together, these are called *members*
 Benefit: information is contained only in the area it's necessary ("information hiding")
 Objects are:
         * defined by writing a *class*
@@ -382,10 +383,58 @@ Why?
 
 
 
-Modules
-=======
+Modules and Packages
+====================
+Python code is organized into modules and packages.
+*Modules* are individual Python files.
+*Packages* are directories that contain Python modules
+Modules and packages are used to distribute re-usable code.
 
+Standard Library
+================
+Python has a philosophy of "batteries included".
+LOTS of modules/packages bundled with Python.
+Examples:::
+        os
+        zlib
+        csv
+        datetime
+        hashlib
+        argparse
+        curses
+        threading
+        socket
+        unittest
+        gettext
+External pacakges, too, like SciPy, NumPy, PyCUDA
 
+Using packages and modules
+==========================
+2 forms:
+        * ``import os``
+        * ``from os import path``
+
+Getting help with packages/modules
+==================================
+Use the ``dir`` function to inspect an object's members, packages and modules included
+Use the ``help`` function to get help for an object.
+
+Example (output shortened):::
+        >>>> import os
+        >>> dir(os)
+        [.... 'walk', 'write']
+        >>> help(os.walk)
+        Help on function walk in module os:
+
+        walk(top, topdown=True, onerror=None, followlinks=False)
+            Directory tree generator.
+            
+            For each directory in the directory tree rooted at top (including top
+            itself, but excluding '.' and '..'), yields a 3-tuple
+            
+                dirpath, dirnames, filenames
+
+        
 Python 2 or 3?
 ==============
 For most things, Python 2 is probably the best choice.
