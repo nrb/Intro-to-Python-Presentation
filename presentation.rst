@@ -389,7 +389,26 @@ Why?
 
 Exercise 4
 ==========
-Create a Python class that 
+Create a Python class that represents a mathematical vector (http://en.wikipedia.org/wiki/Euclidean_vector)
+
+Vectors are pairs of x, y coordinates.  We want the following members:
+        * x coordinate
+        * y coordinate
+        * adding 2 vectors (x1 added to x2, y1 added to y2)
+        * subtracting 2 vectors (x1 minus x2, y1 minus x2)
+        * a __repr__(self) method that returns the coordinates as the string "(x, y)"
+                * Use string interpolation
+
+Should look something like this:::
+        v1 = Vector(1,3)
+        v2 = Vector(8,9)
+        v1.add(v2)
+        print v1
+        (9, 12)
+
+Bonus: Write a method that multiplies both x and y by a single number (scalar multiplication)
+
+
 
 
 
@@ -444,6 +463,15 @@ Example (output shortened):::
             
                 dirpath, dirnames, filenames
 
+Exercise 5
+==========
+Using the vector class we created last time, add a ``length`` method to your vector class
+that does the following:
+        * Squares x and y (``**`` is the exponential operator)
+        * Add the squares together
+        * Return the square root of that sum
+
+Use the ``sqrt`` function from the ``math`` package.
         
 Python 2 or 3?
 ==============
