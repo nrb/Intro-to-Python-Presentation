@@ -295,9 +295,11 @@ Object Oriented Programming
 ===========================
 Object-oriented programming tries to model program strutures after things in the real world.
 Objects have *properties* that describe them (the bike is red), and *methods* that make them do things (the man runs).
+Benefit: information is contained only in the area it's necessary ("information hiding")
 Objects are:
         * defined by writing a *class*
         * created by *instantiating* a class
+
 
 
 Classes
@@ -346,6 +348,28 @@ All classes:
 All methods take ``self`` as the first argument
 ``self`` is *not* passed in when you call the function; Python's interpreter uses it, not the programmer.
 Variables attached to ``self`` can be accessed in any other method in that class.
+I snuck in named arguments there; done for clarity.
+
+More Theory: Inheritance
+========================
+Classes can *inherit* from others.
+This means that the *subclass* shares properties and methods with it's *superclass*
+Also referred to as *child* and *parent* classes
+
+Examples:
+A parent class could be Vehicle, and subclasses would be Car, Motorcycle, Truck, Tractor, etc
+Another parent class could be Animal, subclasses being Cat, Dog, Giraffe, Elephant, etc
+
+You can also have hierarchies:
+* Animal
+        * Mammal
+                * Dog
+                * Cat
+                  ...
+        * Bird
+                * Eagle
+                  ...
+        ...
 
 
 Modules
