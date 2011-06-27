@@ -81,12 +81,14 @@ Running Python
 ==============
 The interactive interpreter
 From your shell prompt, type::
-	$ python
+
+        $ python
+
 Get something like::
-        ``Python 2.6.1 (r261:67515, Jun 24 2010, 21:47:49) 
+        Python 2.6.1 (r261:67515, Jun 24 2010, 21:47:49) 
         [GCC 4.2.1 (Apple Inc. build 5646)] on darwin
         Type "help", "copyright", "credits" or "license" for more information.
-        >>> ``
+        >>> 
 
 The Interactive Interpreter
 ===========================
@@ -105,8 +107,10 @@ String Interpolation
 ====================
 We assigned some variables and printed some things.
 But it can be more interesting.::
+
         >>> print "%s made Python." % name
         Guido von Rossum made Python.
+
 We can use *string interpolation* to substitute a variable's value into a string.
 
 Excercise 1
@@ -119,9 +123,11 @@ Lists
 =====
 Lists are like arrays in Chapel.
 Similar declaration, too.::
-        numbers = [1, 2, 3]
+numbers = [1, 2, 3]
+
 However, unlike statically typed languages, lists can contain any data type.::
         my_list = ["Python", 2, 8.0, []]
+
 Can also add to them and remove elements.
 Order matters.
 
@@ -129,9 +135,12 @@ Tuples
 ======
 Like lists, however, you cannot modify them once created.
 Example::
-        coordinates = (3, 4)
+coordinates = (3, 4)
+
 Tuple with a single element::
+
         weird_tuple = ("Guido",)
+
 Parentheses are also used for grouping, hence the comma.
 
 Iteration/Loops
@@ -142,9 +151,11 @@ For and while loops.
 
 For Loops
 =========
-Structure;
-        ``for variable_name in collection_name:``
-                ``# do things``
+Structure:::
+
+        for variable_name in collection_name:
+                # do things
+                
 Note: everything inside the loop is *indented*!
 
 Quick Note on Indentation
@@ -158,6 +169,7 @@ Quick Note on Indentation
 Back to Loops
 =============
 Example::
+
         >>>> author_names = ["Matz", "Guido", "Larry"]
         >>> for name in author_names:
         ...     print name
@@ -184,15 +196,22 @@ Unordered - when accessing a dictionary, items may not come out in the same orde
 Dictionary Examples
 ===================
 A basic dictionary::
+
         >>> {"shoe_size": 12}
+
 Multiple items::
+
         >>> {"name": "Frank", "height": 6.0}
+
 
 Accessing a Dictionary
 ======================
 First, let's create a dictionary, with a variable::
+
         >>> my_dictionary = {"name": "Fred"}
+
 Next, we can retrieve the value associated with the ``name`` key::
+
         >>> my_dictionary["name"]
         'Fred'
 
@@ -200,6 +219,7 @@ Looping with Dictionaries
 =========================
 Using just the dictionary in the for statement we saw before only works on the dictionary keys.
 To access both, we use the ``items`` method on the dictionary. (Those will be explained soon).::
+
         >>>> language_authors = {"Matz": "Ruby", "Guido": "Python", "Larry": "Perl"}
         >>> for key, value in language_authors.items():
         ...     print "%s wrote %s" % (key, value)
@@ -220,28 +240,36 @@ Functions break up programs into logical pieces
 Very much like procedures in Chapel
 A stepping stone to objects.
 An example:::
+
         def adder(val1, val2):
                 return val1 + val2
+
 Functions have *names* (``adder``), take *arguments* (``val1, val2``) and can *return* a result.
 
 Arguments
 =========
 We use the previous function like this:::
+
         >>> adder(2, 3)
         5
+
 The value ``2`` is put into ``val1``, and 3 into ``val2``.
 ``val1`` and ``val2`` are confined to the ``adder`` function.::
+
         >>>> val1
         Traceback (most recent call last):
           File "<stdin>", line 1, in <module>
         NameError: name 'val1' is not defined
+
 This is called *scope*.
 
 Null arguments
 ==============
 You can also have functions without any arguments:::
+
         def print_hello():
                 print "Hello"
+
 2 things here:
         * The parentheses are simply empty.
         * Notice we didn't return anything; in Python we don't have to.
@@ -254,12 +282,14 @@ Add this at the top, with your code indented underneath.:
 ``if __name__ == "__main__":``
 
 Then, you can run the files with this command:::
+
         $ python my_file.py
 
 Control Flow
 ============
 Python uses ``if`` statements that look similar to Chapel's, but without the braces.
 Basic structure:::
+
         if something:
                 transform(1,2)
         elif something_else:
@@ -270,6 +300,7 @@ Basic structure:::
 Check if a value is in a collection
 ===================================
 Using a conditional with the ``in`` keyword to see if a particular value is contained in a collection:::
+
         >>> if "Yes" in ["Yes", "No"]:
         ...     print "Yep, it's there."
         ... 
@@ -287,10 +318,11 @@ Create a function that returns "weekday" if a day's name is a weekday, "weekend"
 Hints:
         * Just worry about lower case values
         * Getting user input:::
-        >>>> day = raw_input("Input a day's name >> ")
-        Input a day's name >> Monday
-        >>> day
-        'Monday'
+
+                >>>> day = raw_input("Input a day's name >> ")
+                Input a day's name >> Monday
+                >>> day
+                'Monday'
 
 Bonus: If the word given isn't a valid calendar day, return "neither"
                
@@ -301,6 +333,7 @@ Objects have *properties* that describe them (the bike is red), and *methods* th
 Together, these are called *members*
 Benefit: information is contained only in the area it's necessary ("information hiding")
 Objects are:
+
         * defined by writing a *class*
         * created by *instantiating* a class
 
@@ -331,6 +364,7 @@ Objects hold *state* in their properties, which is then changed by methods.
 Defining a class
 ================
 Example:::
+
         >>>> class Dog(object):
         ...     def __init__(self, name=None, breed=None):
         ...             self.name = name
@@ -347,11 +381,13 @@ Example:::
 Things of note
 ==============
 All classes:
+
         * should be defined as ``class ClassName(object)``
                 * ``ClassName`` inherits from ``object``.
         * define an initializer function, ``__init__``
                 * This is a "magic method" that Python uses.
                 * Similar to C++/Java constructors - it sets up initial state
+
 All methods take ``self`` as the first argument
 Different methods can have the same name, if they take different number of arguments.
 ``self`` is *not* passed in when you call the function; Python's interpreter uses it, not the programmer.
@@ -369,15 +405,13 @@ A parent class could be Vehicle, and subclasses would be Car, Motorcycle, Truck,
 Another parent class could be Animal, subclasses being Cat, Dog, Giraffe, Elephant, etc
 
 You can also have hierarchies:
+
 * Animal
         * Mammal
                 * Dog
                 * Cat
-                  ...
         * Bird
                 * Eagle
-                  ...
-        ...
 
 Inheritance in Python
 =====================
@@ -385,6 +419,7 @@ Inheritance in Python
 except for the parent class, which looks like
 ``class ParentClass(object)``
 Why?  
+
         * ``object`` is a type, just like ``int`` or ``str``.  Helps Python allocate memory correctly.
 
 Exercise 4
@@ -392,6 +427,7 @@ Exercise 4
 Create a Python class that represents a mathematical vector (http://en.wikipedia.org/wiki/Euclidean_vector)
 
 Vectors are pairs of x, y coordinates.  We want the following members:
+
         * x coordinate
         * y coordinate
         * adding 2 vectors (x1 added to x2, y1 added to y2)
@@ -400,6 +436,7 @@ Vectors are pairs of x, y coordinates.  We want the following members:
                 * Use string interpolation
 
 Should look something like this:::
+
         v1 = Vector(1,3)
         v2 = Vector(8,9)
         v1.add(v2)
@@ -424,6 +461,7 @@ Standard Library
 Python has a philosophy of "batteries included".
 LOTS of modules/packages bundled with Python.
 Examples:::
+
         os
         zlib
         csv
@@ -435,11 +473,13 @@ Examples:::
         socket
         unittest
         gettext
+
 External pacakges, too, like SciPy, NumPy, PyCUDA
 
 Using packages and modules
 ==========================
 2 forms:
+
         * ``import os``
         * ``from os import path``
 
@@ -449,6 +489,7 @@ Use the ``dir`` function to inspect an object's members, packages and modules in
 Use the ``help`` function to get help for an object.
 
 Example (output shortened):::
+
         >>>> import os
         >>> dir(os)
         [.... 'walk', 'write']
@@ -463,10 +504,12 @@ Example (output shortened):::
             
                 dirpath, dirnames, filenames
 
+
 Exercise 5
 ==========
 Using the vector class we created last time, add a ``length`` method to your vector class
 that does the following:
+
         * Squares x and y (``**`` is the exponential operator)
         * Add the squares together
         * Return the square root of that sum
@@ -476,9 +519,12 @@ Use the ``sqrt`` function from the ``math`` package.
 Python 2 or 3?
 ==============
 For most things, Python 2 is probably the best choice.
+
         * More mature libraries available
         * Better tested
+
 However, Python 3 is the future.
+
         * Python 2.7 is the last release of the 2 line.
         * Overall, a much better language.
 
@@ -488,6 +534,7 @@ Further Resources
 Python Homepage: http://python.org
 Learn Python the Hard Way: http://learnpythonthehardway.org/ (2nd edition released today!)
 Learning the Zen of Python - from the Python prompt, type:::
+
         import this
 
 Also: The Pragmatic Programmer, by Andrew Hunt and David Thomas
