@@ -291,10 +291,62 @@ Hints:
 
 Bonus: If the word given isn't a valid calendar day, return "neither"
                
-
-        
 Object Oriented Programming
 ===========================
+Object-oriented programming tries to model program strutures after things in the real world.
+Objects have *properties* that describe them (the bike is red), and *methods* that make them do things (the man runs).
+Objects are:
+        * defined by writing a *class*
+        * created by *instantiating* a class
+
+
+Classes
+=======
+Think of classes like a *template* for objects; it describes how they will work
+But, the objects contain specific information
+
+Some Examples
+=============
+The Car Class describes cars: They have four wheels, color(s), number of seats, make, model, VIN, can accelerate, deccelerate, turn, etc.
+The *actual* color, number of seats, VIN, make, model corresponds to the specific car.
+The *verbs* (the things they can do) are shared amongst all of them.
+
+The Dog Class describes dogs: They have a color, four legs, eye color, breed(s), can bark, run, etc.
+Fido is a black labrador
+Butch is a white bulldog
+
+
+Making the connection
+=====================
+Properties are *variables* - these can be any valid data type, including other objects!
+Methods are *functions* - these *do* things, and are common to all instances of the object
+Objects hold *state* in their properties, which is then changed by methods.
+
+Defining a class
+================
+Example:::
+        >>>> class Dog(object):
+        ...     def __init__(self, name=None, breed=None):
+        ...             self.name = name
+        ...             self.breed = breed
+        ...     def bark(self):
+        ...             print '%s says, "Woof!"' % self.name
+        ... 
+        >>> fido = Dog(name="Fido", breed="Black Lab")
+        >>> fido.bark()
+        Fido says, "Woof!"
+
+Things of note
+==============
+All classes:
+        * should be defined as ``class ClassName(object)``
+        * define an initializer function, ``__init__``
+                * This is a "magic method" that Python uses.
+                * Similar to C++/Java constructors - it sets up initial state
+All methods take ``self`` as the first argument
+``self`` is *not* passed in when you call the function; Python's interpreter uses it, not the programmer.
+Variables attached to ``self`` can be accessed in any other method in that class.
+
 
 Modules
 =======
@@ -314,5 +366,7 @@ Further Resources
 
 Python Homepage: http://python.org
 Learn Python the Hard Way: http://learnpythonthehardway.org/ (2nd edition released today!)
+Learning the Zen of Python - from the Python prompt, type:::
+        import this
 
 Also: The Pragmatic Programmer, by Andrew Hunt and David Thomas
