@@ -505,6 +505,7 @@ Bonus: Write a method that multiplies both x and y by a single number (scalar mu
 
 Solution 4
 ==========
+.. include:: solutions/solution4.rst
 
 
 Modules and Packages
@@ -568,6 +569,7 @@ Use the ``sqrt`` function from the ``math`` package.
 
 Solution 5
 ==========
+.. include:: solutions/solution5.rst
         
 Python 2 or 3?
 ==============
