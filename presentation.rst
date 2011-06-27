@@ -497,8 +497,8 @@ Should look something like this::
 
         v1 = Vector(1,3)
         v2 = Vector(8,9)
-        v1.add(v2)
-        print v1
+        v3 = v1.add(v2)
+        print v3
         (9, 12)
 
 Bonus: Write a method that multiplies both x and y by a single number (scalar multiplication)
