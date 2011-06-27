@@ -217,6 +217,7 @@ The loop didn't print the values in the same order we put them in.
 Functions
 =========
 Functions break up programs into logical pieces
+Very much like procedures in Chapel
 A stepping stone to objects.
 An example:::
         def adder(val1, val2):
@@ -253,7 +254,11 @@ Then, you can run the files with this command:::
         $ python my_file.py
 
         
+Object Oriented Programming
+===========================
 
+Modules
+=======
 
 
 Python 2 or 3?
