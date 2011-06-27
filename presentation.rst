@@ -214,7 +214,46 @@ Instead of one loop variable, we had two.
 When we used multiple values in string interpolation, we used a tuple.
 The loop didn't print the values in the same order we put them in.
 
+Functions
+=========
+Functions break up programs into logical pieces
+A stepping stone to objects.
+An example:::
+        def adder(val1, val2):
+                return val1 + val2
+Functions have *names* (``adder``), take *arguments* (``val1, val2``) and can *return* a result.
+
+Arguments
+=========
+We use the previous function like this:::
+        >>> adder(2, 3)
+        5
+The value ``2`` is put into ``val1``, and 3 into ``val2``.
+``val1`` and ``val2`` are confined to the ``adder`` function.::
+        >>>> val1
+        Traceback (most recent call last):
+          File "<stdin>", line 1, in <module>
+        NameError: name 'val1' is not defined
+This is called *scope*.
+
+Null arguments
+==============
+You can also have functions without any arguments:::
+        def print_hello():
+                print "Hello"
+2 things here:
+        * The parentheses are simply empty.
+        * Notice we didn't return anything; in Python we don't have to.
+
+Interlude - Using Python Files
+==============================
+You can use ``gedit`` to edit Python files, saving them with the extension ``.py``.
+
+Then, you can run the files with this command:::
+        $ python my_file.py
+
         
+
 
 
 Python 2 or 3?
