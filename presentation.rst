@@ -181,3 +181,11 @@ For most things, Python 2 is probably the best choice.
 However, Python 3 is the future.
         * Python 2.7 is the last release of the 2 line.
         * Overall, a much better language.
+
+Further Resources
+=================
+
+Python Homepage: http://python.org
+Learn Python the Hard Way: http://learnpythonthehardway.org/ (2nd edition released today!)
+
+Also: The Pragmatic Programmer, by Andrew Hunt and David Thomas
