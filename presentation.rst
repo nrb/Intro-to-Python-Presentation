@@ -368,6 +368,7 @@ Bonus: If the word given isn't a valid calendar day, return "neither"
 
 Solution 3
 ==========
+.. include:: solutions/solution3.rst
                
 Object Oriented Programming
 ===========================
