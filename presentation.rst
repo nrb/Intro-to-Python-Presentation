@@ -83,10 +83,10 @@ The interactive interpreter
 From your shell prompt, type::
 	$ python
 Get something like::
-        Python 2.6.1 (r261:67515, Jun 24 2010, 21:47:49) 
+        ``Python 2.6.1 (r261:67515, Jun 24 2010, 21:47:49) 
         [GCC 4.2.1 (Apple Inc. build 5646)] on darwin
         Type "help", "copyright", "credits" or "license" for more information.
-        >>> 
+        >>> ``
 
 The Interactive Interpreter
 ===========================
@@ -148,7 +148,7 @@ Structure;
 Note: everything inside the loop is *indented*!
 
 Quick Note on Indentation
-===========
+=========================
 * Python uses indentation to control code structure.
 * Other languages use braces ( { and } )
 * Python only cares that your indentation is consistent
