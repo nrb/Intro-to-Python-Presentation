@@ -13,7 +13,7 @@ for script in exercise_scripts:
     with open(script, "r") as f:
         c = f.read()
 
-    solution_text = ["Solution %s::" % ex_number]
+    solution_text = ["Solution %s::" % ex_number, "\n"]
     c = c.split("\n")
 
     # Append indentation and rejoin.
