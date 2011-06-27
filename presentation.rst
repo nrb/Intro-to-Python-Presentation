@@ -123,6 +123,7 @@ Similar declaration, too.::
 However, unlike statically typed languages, lists can contain any data type.::
         my_list = ["Python", 2, 8.0, []]
 Can also add to them and remove elements.
+Order matters.
 
 Tuples
 ======
@@ -170,6 +171,49 @@ Exercise 2
 Print your name 20 times.
 
 Hint: Instead of a list or tuple in the ``collection_name`` spot, use ``range(0,20)``.
+It's kind of like Chapel's range syntax.
+
+
+Dictionaries
+============
+A collection of *key, value pairs*.
+Associates a *key* (which can be a number, string, object, whatever), with a *value*.
+Unordered - when accessing a dictionary, items may not come out in the same order they were added.
+
+
+Dictionary Examples
+===================
+A basic dictionary::
+        >>> {"shoe_size": 12}
+Multiple items::
+        >>> {"name": "Frank", "height": 6.0}
+
+Accessing a Dictionary
+======================
+First, let's create a dictionary, with a variable::
+        >>> my_dictionary = {"name": "Fred"}
+Next, we can retrieve the value associated with the ``name`` key::
+        >>> my_dictionary["name"]
+        'Fred'
+
+Looping with Dictionaries
+=========================
+Using just the dictionary in the for statement we saw before only works on the dictionary keys.
+To access both, we use the ``items`` method on the dictionary. (Those will be explained soon).::
+        >>>> language_authors = {"Matz": "Ruby", "Guido": "Python", "Larry": "Perl"}
+        >>> for key, value in language_authors.items():
+        ...     print "%s wrote %s" % (key, value)
+        ... 
+        Larry wrote Perl
+        Matz wrote Ruby
+        Guido wrote Python
+
+Things to note
+==============
+Instead of one loop variable, we had two.
+When we used multiple values in string interpolation, we used a tuple.
+The loop didn't print the values in the same order we put them in.
+
         
 
 
