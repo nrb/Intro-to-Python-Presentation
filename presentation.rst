@@ -342,6 +342,7 @@ Things of note
 ==============
 All classes:
         * should be defined as ``class ClassName(object)``
+                * ``ClassName`` inherits from ``object``.
         * define an initializer function, ``__init__``
                 * This is a "magic method" that Python uses.
                 * Similar to C++/Java constructors - it sets up initial state
@@ -370,6 +371,15 @@ You can also have hierarchies:
                 * Eagle
                   ...
         ...
+
+Inheritance in Python
+=====================
+``class ChildClass(ParentClass)``
+except for the parent class, which looks like
+``class ParentClass(object)``
+Why?  
+        * ``object`` is a type, just like ``int`` or ``str``.  Helps Python allocate memory correctly.
+
 
 
 Modules
