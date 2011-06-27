@@ -70,6 +70,12 @@ Several generic, basic data types:
         * Booleans
         * Objects
 
+Collections
+===========
+        * Lists
+        * Dictionaries
+        * Tuples
+
 
 Running Python
 ==============
@@ -112,6 +118,59 @@ Make the interactive interpreter return the following string:
 Lists
 =====
 Lists are like arrays in Chapel.
+Similar declaration, too.::
+        numbers = [1, 2, 3]
+However, unlike statically typed languages, lists can contain any data type.::
+        my_list = ["Python", 2, 8.0, []]
+Can also add to them and remove elements.
+
+Tuples
+======
+Like lists, however, you cannot modify them once created.
+Example::
+        coordinates = (3, 4)
+Tuple with a single element::
+        weird_tuple = ("Guido",)
+Parentheses are also used for grouping, hence the comma.
+
+Iteration/Loops
+===============
+Used to repeat a single instruction multiple times.
+Really useful for operating on collections.
+For and while loops.
+
+For Loops
+=========
+Structure;
+        ``for variable_name in collection_name:``
+                ``# do things``
+Note: everything inside the loop is *indented*!
+
+Quick Note on Indentation
+===========
+* Python uses indentation to control code structure.
+* Other languages use braces ( { and } )
+* Python only cares that your indentation is consistent
+        * Don't mix tabs and spaces
+        * Most often, people use 4 spaces as the indent-level
+
+Back to Loops
+=============
+Example::
+        >>>> author_names = ["Matz", "Guido", "Larry"]
+        >>> for name in author_names:
+        ...     print name
+        ... 
+        Matz
+        Guido
+        Larry
+
+Exercise 2
+==========
+Print your name 20 times.
+
+Hint: Instead of a list or tuple in the ``collection_name`` spot, use ``range(0,20)``.
+        
 
 
 Python 2 or 3?
