@@ -121,6 +121,17 @@ Make the interactive interpreter return the following string:
 
  "Hello, *[your name here]*"
 
+Solution 1
+==========
+One way::
+
+        print "Hello, Nolan!"
+
+Another way::
+
+        name = "Nolan"
+        print "Hello %s" % name
+
 
 Lists
 =====
@@ -197,6 +208,18 @@ Hint: Instead of a list or tuple in the ``collection_name`` spot, use ``range(0,
 
 It's kind of like Chapel's range syntax.
 
+Solution 2
+==========
+One way::
+
+        for i in range(0,20):
+                print "Hello, Nolan"
+
+Second way::
+        
+        name = "Nolan"
+        for i in range(0,20):
+               print "Hello, %s" % name
 
 Dictionaries
 ============
@@ -342,6 +365,9 @@ Hints:
                 'Monday'
 
 Bonus: If the word given isn't a valid calendar day, return "neither"
+
+Solution 3
+==========
                
 Object Oriented Programming
 ===========================
@@ -476,6 +502,9 @@ Should look something like this::
 
 Bonus: Write a method that multiplies both x and y by a single number (scalar multiplication)
 
+Solution 4
+==========
+
 
 Modules and Packages
 ====================
@@ -535,6 +564,9 @@ that does the following:
 * Return the square root of that sum
 
 Use the ``sqrt`` function from the ``math`` package.
+
+Solution 5
+==========
         
 Python 2 or 3?
 ==============
