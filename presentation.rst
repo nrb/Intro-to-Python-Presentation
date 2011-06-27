@@ -52,7 +52,7 @@ Dynamically Typed
 Variable's *properties* are important, not it's data type.
 
 Also known as "duck typing".
-	"If it walks like a duck and quacks like a duck, it's a duck".
+	* "If it walks like a duck and quacks like a duck, it's a duck".
 
 Object-Oriented
 ===============
@@ -61,9 +61,64 @@ Objects are instances classes.
 More on this later.
 
 
+Data Types
+==========
+Several generic, basic data types:
+        * Integers
+        * Floats
+        * Strings
+        * Booleans
+        * Objects
 
 
 Running Python
 ==============
+The interactive interpreter
 From your shell prompt, type::
 	$ python
+Get something like::
+        Python 2.6.1 (r261:67515, Jun 24 2010, 21:47:49) 
+        [GCC 4.2.1 (Apple Inc. build 5646)] on darwin
+        Type "help", "copyright", "credits" or "license" for more information.
+        >>> 
+
+The Interactive Interpreter
+===========================
+You can type in valid Python expressions in order to test things out.::
+        >>> name = "Guido von Rossum"
+        >>> year = 1990
+        >>> print name
+        Guido von Rossum
+        >>> print year
+        1990
+        >>> 1 + 2
+        3
+        >>> 
+
+String Interpolation
+====================
+We assigned some variables and printed some things.
+But it can be more interesting.::
+        >>> print "%s made Python." % name
+        Guido von Rossum made Python.
+We can use *string interpolation* to substitute a variable's value into a string.
+
+Excercise 1
+===========
+Make the interactive interpreter return the following string:
+ "Hello, *[your name here]*"
+
+
+Lists
+=====
+Lists are like arrays in Chapel.
+
+
+Python 2 or 3?
+==============
+For most things, Python 2 is probably the best choice.
+        * More mature libraries available
+        * Better tested
+However, Python 3 is the future.
+        * Python 2.7 is the last release of the 2 line.
+        * Overall, a much better language.
