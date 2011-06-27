@@ -173,7 +173,7 @@ htmlhelp_basename = 'intro_to_pythondoc'
 #latex_paper_size = 'letter'
 
 # The font size ('10pt', '11pt' or '12pt').
-#latex_font_size = '10pt'
+latex_font_size = '12pt'
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
@@ -181,6 +181,12 @@ latex_documents = [
   ('index', 'intro_to_python.tex', u'An Introduction to Python',
    u'Nolan Brubaker', 'manual'),
 ]
+
+latex_elements = {
+        "classoptions": ",oneside",
+        "babel": "\\usepackage[english]{babel}",
+        "preamble": "\\setcounter{secnumdepth}{-1}"
+}
 
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
