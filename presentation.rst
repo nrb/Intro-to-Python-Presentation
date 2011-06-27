@@ -253,6 +253,45 @@ You can use ``gedit`` to edit Python files, saving them with the extension ``.py
 Then, you can run the files with this command:::
         $ python my_file.py
 
+Control Flow
+============
+Python uses ``if`` statements that look similar to Chapel's, but without the braces.
+Basic structure:::
+        if something:
+                transform(1,2)
+        elif something_else:
+                transform(2,3)
+        else:
+                transform(3,4)
+
+Check if a value is in a collection
+===================================
+Using a conditional with the ``in`` keyword to see if a particular value is contained in a collection:::
+        >>> if "Yes" in ["Yes", "No"]:
+        ...     print "Yep, it's there."
+        ... 
+        Yep, it's there.
+        >>> if "Joe" not in ["Sam", "Frank"]:
+        ...     print "Joe's not there."
+        ... 
+        Joe's not there.
+
+
+Exercise 3
+==========
+Create a function that returns "weekday" if a day's name is a weekday, "weekend" if it's not.
+
+Hints:
+        * Just worry about lower case values
+        * Getting user input:::
+        >>>> day = raw_input("Input a day's name >> ")
+        Input a day's name >> Monday
+        >>> day
+        'Monday'
+
+Bonus: If the word given isn't a valid calendar day, return "neither"
+               
+
         
 Object Oriented Programming
 ===========================
