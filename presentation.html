@@ -1,0 +1,1047 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.7: http://docutils.sourceforge.net/" />
+<meta name="version" content="S5 1.1" />
+<title>An Introduction to Python</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 6253 2010-03-02 00:24:53Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: left }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+<link rel="stylesheet" href="ui/i18n/slides.css"
+      type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css"
+      type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css"
+      type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css"
+      type="text/css" media="projection" id="operaFix" />
+
+<style type="text/css">
+#currentSlide {display: none;}
+</style>
+</head>
+<body>
+<div class="layout">
+<div id="controls"></div>
+<div id="currentSlide"></div>
+<div id="header">
+
+</div>
+<div id="footer">
+
+</div>
+</div>
+<div class="presentation">
+<div class="slide" id="slide0">
+
+
+
+</div>
+<div class="slide" id="history-of-python">
+<h1>History of Python</h1>
+<dl class="docutils">
+<dt>Developed by Guido von Rossum in 1989 at CWI</dt>
+<dd><ul class="first last simple">
+<li>CWI is a research institution funded by the Dutch government</li>
+<li>Guido needed something that was faster for development than C, less tied to Unix then Perl and bash.</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="slide" id="who-uses-python">
+<h1>Who uses Python?</h1>
+<ul class="simple">
+<li>Google (Guido works there)</li>
+<li>DemonWare (Call of Duty servers)</li>
+<li>CCP Games (EVE Online)</li>
+<li>CRC (web development, scientific libraries)</li>
+<li>Dropbox</li>
+<li>Canonical (creators of Ubuntu)</li>
+</ul>
+</div>
+<div class="slide" id="what-is-python">
+<h1>What is Python?</h1>
+<ul class="simple">
+<li>An object-oriented, dynamically typed, interpreted, general purpose programming language</li>
+<li>Open source, BSD-like license</li>
+<li>Supported on lots of platforms</li>
+</ul>
+</div>
+<div class="slide" id="general-purpose">
+<h1>General Purpose</h1>
+<dl class="docutils">
+<dt>Used for lots of different programming tasks</dt>
+<dd><ul class="first last simple">
+<li>Automatic repetitive administrative tasks</li>
+<li>Scientific calculations (libraries like SciPy and NumPy)</li>
+<li>Web development (Django, Pyramid, Flask, Google App Engine, so on and so forth)</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="slide" id="interpreted">
+<h1>Interpreted</h1>
+<p>Python code is translated to machine code at runtime, not in a prior compilation step.</p>
+<dl class="docutils">
+<dt>Several interpreters</dt>
+<dd><ul class="first last simple">
+<li>Standard CPython</li>
+<li>PyPy project</li>
+<li>Stackless</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="slide" id="dynamically-typed">
+<h1>Dynamically Typed</h1>
+<ul class="simple">
+<li>Languages like Chapel, C, Java require variables to have their type declared on creation</li>
+<li>Python does not; a variable can hold any kind of value.</li>
+</ul>
+<p>Examples:</p>
+<pre class="literal-block">
+a = &quot;a string&quot;
+a = 1
+</pre>
+</div>
+<div class="slide" id="id1">
+<h1>Dynamically Typed</h1>
+<ul>
+<li><p class="first">Variable's <em>properties</em> are important, not it's data type.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Also known as &quot;duck typing&quot;.</dt>
+<dd><ul class="first last simple">
+<li>&quot;If it walks like a duck and quacks like a duck, it's a duck&quot;.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="slide" id="object-oriented">
+<h1>Object-Oriented</h1>
+<ul class="simple">
+<li>Data and the functions related to it is associated through objects</li>
+<li>Objects are instances classes.</li>
+<li>More on this later.</li>
+</ul>
+</div>
+<div class="slide" id="data-types">
+<h1>Data Types</h1>
+<ul>
+<li><dl class="first docutils">
+<dt>Several generic, basic data types:</dt>
+<dd><ul class="first last simple">
+<li>Integers</li>
+<li>Floats</li>
+<li>Strings</li>
+<li>Booleans</li>
+<li>Objects</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="slide" id="collections">
+<h1>Collections</h1>
+<ul class="simple">
+<li>Lists</li>
+<li>Dictionaries</li>
+<li>Tuples</li>
+</ul>
+</div>
+<div class="slide" id="running-python">
+<h1>Running Python</h1>
+<p>The interactive interpreter
+From your shell prompt, type:</p>
+<pre class="literal-block">
+$ python
+</pre>
+<p>Get something like:</p>
+<pre class="literal-block">
+Python 2.6.1 (r261:67515, Jun 24 2010, 21:47:49)
+[GCC 4.2.1 (Apple Inc. build 5646)] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;
+</pre>
+</div>
+<div class="slide" id="the-interactive-interpreter">
+<h1>The Interactive Interpreter</h1>
+<p>You can type in valid Python expressions in order to test things out:</p>
+<pre class="literal-block">
+&gt;&gt;&gt; name = &quot;Guido von Rossum&quot;
+&gt;&gt;&gt; year = 1990
+&gt;&gt;&gt; print name
+Guido von Rossum
+&gt;&gt;&gt; print year
+1990
+&gt;&gt;&gt; 1 + 2
+3
+&gt;&gt;&gt;
+</pre>
+</div>
+<div class="slide" id="string-interpolation">
+<h1>String Interpolation</h1>
+<p>We assigned some variables and printed some things.</p>
+<p>But it can be more interesting.:</p>
+<pre class="literal-block">
+&gt;&gt;&gt; print &quot;%s made Python.&quot; % name
+Guido von Rossum made Python.
+</pre>
+<p>We can use <em>string interpolation</em> to substitute a variable's value into a string.</p>
+</div>
+<div class="slide" id="excercise-1">
+<h1>Excercise 1</h1>
+<p>Make the interactive interpreter return the following string:</p>
+<blockquote>
+&quot;Hello, <em>[your name here]</em>&quot;</blockquote>
+</div>
+<div class="slide" id="lists">
+<h1>Lists</h1>
+<p>Lists are like arrays in Chapel.</p>
+<p>Similar declaration, too.:</p>
+<pre class="literal-block">
+numbers = [1, 2, 3]
+</pre>
+<p>However, unlike statically typed languages, lists can contain any data type.:</p>
+<pre class="literal-block">
+my_list = [&quot;Python&quot;, 2, 8.0, []]
+</pre>
+<p>Can also add to them and remove elements.</p>
+<p>Order matters.</p>
+</div>
+<div class="slide" id="tuples">
+<h1>Tuples</h1>
+<p>Like lists, however, you cannot modify them once created.</p>
+<p>Example:</p>
+<pre class="literal-block">
+coordinates = (3, 4)
+</pre>
+<p>Tuple with a single element:</p>
+<pre class="literal-block">
+weird_tuple = (&quot;Guido&quot;,)
+</pre>
+<p>Parentheses are also used for grouping, hence the comma.</p>
+</div>
+<div class="slide" id="iteration-loops">
+<h1>Iteration/Loops</h1>
+<p>Used to repeat a single instruction multiple times.</p>
+<p>Really useful for operating on collections.</p>
+<p>For and while loops.</p>
+</div>
+<div class="slide" id="for-loops">
+<h1>For Loops</h1>
+<p>Structure::</p>
+<pre class="literal-block">
+for variable_name in collection_name:
+        # do things
+</pre>
+<p>Note: everything inside the loop is <em>indented</em>!</p>
+</div>
+<div class="slide" id="quick-note-on-indentation">
+<h1>Quick Note on Indentation</h1>
+<ul>
+<li><p class="first">Python uses indentation to control code structure.</p>
+</li>
+<li><p class="first">Other languages use braces ( { and } )</p>
+</li>
+<li><dl class="first docutils">
+<dt>Python only cares that your indentation is consistent</dt>
+<dd><ul class="first last simple">
+<li>Don't mix tabs and spaces</li>
+<li>Most often, people use 4 spaces as the indent-level</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="slide" id="back-to-loops">
+<h1>Back to Loops</h1>
+<p>Example:</p>
+<pre class="literal-block">
+&gt;&gt;&gt;&gt; author_names = [&quot;Matz&quot;, &quot;Guido&quot;, &quot;Larry&quot;]
+&gt;&gt;&gt; for name in author_names:
+...     print name
+...
+Matz
+Guido
+Larry
+</pre>
+</div>
+<div class="slide" id="exercise-2">
+<h1>Exercise 2</h1>
+<p>Print your name 20 times.</p>
+<p>Hint: Instead of a list or tuple in the <tt class="docutils literal">collection_name</tt> spot, use <tt class="docutils literal">range(0,20)</tt>.</p>
+<p>It's kind of like Chapel's range syntax.</p>
+</div>
+<div class="slide" id="dictionaries">
+<h1>Dictionaries</h1>
+<ul class="simple">
+<li>A collection of <em>key, value pairs</em>.</li>
+<li>Associates a <em>key</em> (which can be a number, string, object, whatever), with a <em>value</em>.</li>
+<li>Unordered - when accessing a dictionary, items may not come out in the same order they were added.</li>
+</ul>
+</div>
+<div class="slide" id="dictionary-examples">
+<h1>Dictionary Examples</h1>
+<p>A basic dictionary:</p>
+<pre class="literal-block">
+&gt;&gt;&gt; {&quot;shoe_size&quot;: 12}
+</pre>
+<p>Multiple items:</p>
+<pre class="literal-block">
+&gt;&gt;&gt; {&quot;name&quot;: &quot;Frank&quot;, &quot;height&quot;: 6.0}
+</pre>
+</div>
+<div class="slide" id="accessing-a-dictionary">
+<h1>Accessing a Dictionary</h1>
+<p>First, let's create a dictionary, with a variable:</p>
+<pre class="literal-block">
+&gt;&gt;&gt; my_dictionary = {&quot;name&quot;: &quot;Fred&quot;}
+</pre>
+<p>Next, we can retrieve the value associated with the <tt class="docutils literal">name</tt> key:</p>
+<pre class="literal-block">
+&gt;&gt;&gt; my_dictionary[&quot;name&quot;]
+'Fred'
+</pre>
+</div>
+<div class="slide" id="looping-with-dictionaries">
+<h1>Looping with Dictionaries</h1>
+<p>Using just the dictionary in the for statement we saw before only works on the dictionary keys.</p>
+<p>To access both, we use the <tt class="docutils literal">items</tt> method on the dictionary. (Those will be explained soon):</p>
+<pre class="literal-block">
+&gt;&gt;&gt;&gt; language_authors = {&quot;Matz&quot;: &quot;Ruby&quot;, &quot;Guido&quot;: &quot;Python&quot;,
+... &quot;Larry&quot;: &quot;Perl&quot;}
+&gt;&gt;&gt; for key, value in language_authors.items():
+...     print &quot;%s wrote %s&quot; % (key, value)
+...
+Larry wrote Perl
+Matz wrote Ruby
+Guido wrote Python
+</pre>
+</div>
+<div class="slide" id="things-to-note">
+<h1>Things to note</h1>
+<p>Instead of one loop variable, we had two.</p>
+<p>When we used multiple values in string interpolation, we used a tuple.</p>
+<p>The loop didn't print the values in the same order we put them in.</p>
+</div>
+<div class="slide" id="functions">
+<h1>Functions</h1>
+<p>Functions break up programs into logical pieces</p>
+<p>Very much like procedures in Chapel</p>
+<p>A stepping stone to objects.</p>
+<p>An example:</p>
+<pre class="literal-block">
+def adder(val1, val2):
+        return val1 + val2
+</pre>
+<p>Functions have <em>names</em> (<tt class="docutils literal">adder</tt>), take <em>arguments</em> (<tt class="docutils literal">val1, val2</tt>) and can <em>return</em> a result.</p>
+</div>
+<div class="slide" id="arguments">
+<h1>Arguments</h1>
+<p>We use the previous function like this:</p>
+<pre class="literal-block">
+&gt;&gt;&gt; adder(2, 3)
+5
+</pre>
+<p>The value <tt class="docutils literal">2</tt> is put into <tt class="docutils literal">val1</tt>, and <tt class="docutils literal">3</tt> into <tt class="docutils literal">val2</tt>.
+<tt class="docutils literal">val1</tt> and <tt class="docutils literal">val2</tt> are confined to the <tt class="docutils literal">adder</tt> function:</p>
+<pre class="literal-block">
+&gt;&gt;&gt;&gt; val1
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+NameError: name 'val1' is not defined
+</pre>
+<p>This is called <em>scope</em>.</p>
+</div>
+<div class="slide" id="null-arguments">
+<h1>Null arguments</h1>
+<p>You can also have functions without any arguments:</p>
+<pre class="literal-block">
+def print_hello():
+        print &quot;Hello&quot;
+</pre>
+<dl class="docutils">
+<dt>2 things here:</dt>
+<dd><ul class="first last simple">
+<li>The parentheses are simply empty.</li>
+<li>Notice we didn't return anything; in Python we don't have to.</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="slide" id="interlude-using-python-files">
+<h1>Interlude - Using Python Files</h1>
+<p>You can use <tt class="docutils literal">gedit</tt> to edit Python files, saving them with the extension <tt class="docutils literal">.py</tt>.</p>
+<p>Then, you can run the files with this command:</p>
+<pre class="literal-block">
+$ python my_file.py
+</pre>
+</div>
+<div class="slide" id="control-flow">
+<h1>Control Flow</h1>
+<p>Python uses <tt class="docutils literal">if</tt> statements that look similar to Chapel's, but without the braces.</p>
+<p>Basic structure:</p>
+<pre class="literal-block">
+if something:
+        transform(1,2)
+elif something_else:
+        transform(2,3)
+else:
+        transform(3,4)
+</pre>
+</div>
+<div class="slide" id="check-if-a-value-is-in-a-collection">
+<h1>Check if a value is in a collection</h1>
+<p>Using a conditional with the <tt class="docutils literal">in</tt> keyword to see if a particular value is contained in a collection:</p>
+<pre class="literal-block">
+&gt;&gt;&gt; if &quot;Yes&quot; in [&quot;Yes&quot;, &quot;No&quot;]:
+...     print &quot;Yep, it's there.&quot;
+...
+Yep, it's there.
+&gt;&gt;&gt; if &quot;Joe&quot; not in [&quot;Sam&quot;, &quot;Frank&quot;]:
+...     print &quot;Joe's not there.&quot;
+...
+Joe's not there.
+</pre>
+</div>
+<div class="slide" id="exercise-3">
+<h1>Exercise 3</h1>
+<p>Create a function that returns &quot;weekday&quot; if a day's name is a weekday, &quot;weekend&quot; if it's not.</p>
+<dl class="docutils">
+<dt>Hints:</dt>
+<dd><ul class="first last">
+<li><p class="first">Just worry about lower case values</p>
+</li>
+<li><p class="first">Getting user input:</p>
+<pre class="literal-block">
+&gt;&gt;&gt;&gt; day = raw_input(&quot;Input a day's name &gt;&gt; &quot;)
+Input a day's name &gt;&gt; Monday
+&gt;&gt;&gt; day
+'Monday'
+</pre>
+</li>
+</ul>
+</dd>
+</dl>
+<p>Bonus: If the word given isn't a valid calendar day, return &quot;neither&quot;</p>
+</div>
+<div class="slide" id="object-oriented-programming">
+<h1>Object Oriented Programming</h1>
+<ul>
+<li><p class="first">Object-oriented programming tries to model program strutures after things in the real world.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Objects have:</dt>
+<dd><ul class="first last simple">
+<li><em>properties</em> that describe them (the bike is red)</li>
+<li><em>methods</em> that make them do things (the man runs).</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Together, these are called <em>members</em></p>
+</li>
+<li><p class="first">Benefit: information is contained only in the area it's necessary (&quot;information hiding&quot;)</p>
+</li>
+<li><dl class="first docutils">
+<dt>Objects are:</dt>
+<dd><ul class="first last simple">
+<li>defined by writing a <em>class</em></li>
+<li>created by <em>instantiating</em> a class</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="slide" id="classes">
+<h1>Classes</h1>
+<p>Think of classes like a <em>template</em> for objects; it describes how they will work</p>
+<p>But, the objects contain specific information</p>
+</div>
+<div class="slide" id="example">
+<h1>Example</h1>
+<ul>
+<li><dl class="first docutils">
+<dt>The Car Class describes cars:</dt>
+<dd><ul class="first last simple">
+<li>They have four wheels, color(s), number of seats, make, model, VIN,
+can accelerate, deccelerate, turn, etc.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">The <em>actual</em> color, number of seats, VIN, make, model corresponds to the specific car.</p>
+</li>
+<li><p class="first">The <em>verbs</em> (the things they can do) are shared amongst all of them.</p>
+</li>
+</ul>
+</div>
+<div class="slide" id="id2">
+<h1>Example</h1>
+<ul class="simple">
+<li>The Dog Class describes dogs: They have a color, four legs, eye color, breed(s), can bark, run, etc.</li>
+<li>Fido is a black labrador</li>
+<li>Butch is a white bulldog</li>
+</ul>
+</div>
+<div class="slide" id="making-the-connection">
+<h1>Making the connection</h1>
+<ul class="simple">
+<li>Properties are <em>variables</em> - these can be any valid data type, including other objects!</li>
+<li>Methods are <em>functions</em> - these <em>do</em> things, and are common to all instances of the object</li>
+<li>Objects hold <em>state</em> in their properties, which is then changed by methods.</li>
+</ul>
+</div>
+<div class="slide" id="defining-a-class">
+<h1>Defining a class</h1>
+<p>Example::</p>
+<pre class="literal-block">
+&gt;&gt;&gt;&gt; class Dog(object):
+...     def __init__(self, name=None, breed=None):
+...             self.name = name
+...             self.breed = breed
+...     def bark(self):
+...             print '%s says, &quot;Woof!&quot;' % self.name
+...     def bark(self, target):
+...             print &quot;%s barks at %s!&quot; % (self.name, target.name)
+...
+&gt;&gt;&gt; fido = Dog(name=&quot;Fido&quot;, breed=&quot;Black Lab&quot;)
+&gt;&gt;&gt; fido.bark()
+Fido says, &quot;Woof!&quot;
+</pre>
+</div>
+<div class="slide" id="things-of-note">
+<h1>Things of note</h1>
+<ul>
+<li><dl class="first docutils">
+<dt>All classes:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>should be defined as <tt class="docutils literal">class ClassName(object)</tt></dt>
+<dd><ul class="first last simple">
+<li><tt class="docutils literal">ClassName</tt> inherits from <tt class="docutils literal">object</tt>.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>define an initializer function, <tt class="docutils literal">__init__</tt></dt>
+<dd><ul class="first last simple">
+<li>This is a &quot;magic method&quot; that Python uses.</li>
+<li>Similar to C++/Java constructors - it sets up initial state</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="slide" id="id3">
+<h1>Things of note</h1>
+<ul class="simple">
+<li>All methods take <tt class="docutils literal">self</tt> as the first argument</li>
+<li>Different methods can have the same name, if they take different number of arguments.</li>
+<li><tt class="docutils literal">self</tt> is <em>not</em> passed in when you call the function; Python's interpreter uses it, not the programmer.</li>
+<li>Variables attached to <tt class="docutils literal">self</tt> can be accessed in any other method in that class.</li>
+<li>I snuck in named arguments there; done for clarity.</li>
+</ul>
+</div>
+<div class="slide" id="more-theory-inheritance">
+<h1>More Theory: Inheritance</h1>
+<ul>
+<li><dl class="first docutils">
+<dt>Classes can <em>inherit</em> from others.</dt>
+<dd><ul class="first last simple">
+<li>This means that the <em>subclass</em> shares properties and methods with it's <em>superclass</em></li>
+<li>Also referred to as <em>child</em> and <em>parent</em> classes</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Examples:</p>
+<ul class="simple">
+<li>A parent class could be Vehicle, and subclasses would be Car, Motorcycle, Truck, Tractor, etc</li>
+<li>Another parent class could be Animal, subclasses being Cat, Dog, Giraffe, Elephant, etc</li>
+</ul>
+</div>
+<div class="slide" id="hierarchies">
+<h1>Hierarchies</h1>
+<p>You can also have hierarchies:</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Animal</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Mammal</dt>
+<dd><ul class="first last simple">
+<li>Dog</li>
+<li>Cat</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Bird</dt>
+<dd><ul class="first last simple">
+<li>Eagle</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="slide" id="inheritance-in-python">
+<h1>Inheritance in Python</h1>
+<p><tt class="docutils literal">class ChildClass(ParentClass)</tt></p>
+<p>except for the parent class, which looks like</p>
+<p><tt class="docutils literal">class ParentClass(object)</tt></p>
+<p>Why?</p>
+<ul class="simple">
+<li><tt class="docutils literal">object</tt> is a type, just like <tt class="docutils literal">int</tt> or <tt class="docutils literal">str</tt>.  Helps Python allocate memory correctly.</li>
+</ul>
+</div>
+<div class="slide" id="exercise-4">
+<h1>Exercise 4</h1>
+<p>Create a Python class that represents a mathematical vector (<a class="reference external" href="http://en.wikipedia.org/wiki/Euclidean_vector">http://en.wikipedia.org/wiki/Euclidean_vector</a>)</p>
+<p>Vectors are pairs of x, y coordinates.  We want the following members:</p>
+<ul class="simple">
+<li>x coordinate</li>
+<li>y coordinate</li>
+<li>adding 2 vectors (x1 added to x2, y1 added to y2)</li>
+<li>subtracting 2 vectors (x1 minus x2, y1 minus x2)</li>
+<li>a __repr__(self) method that returns the coordinates as the string &quot;(x, y)&quot;</li>
+</ul>
+</div>
+<div class="slide" id="exercise-4-hints">
+<h1>Exercise 4 Hints</h1>
+<p>Should look something like this:</p>
+<pre class="literal-block">
+v1 = Vector(1,3)
+v2 = Vector(8,9)
+v1.add(v2)
+print v1
+(9, 12)
+</pre>
+<p>Bonus: Write a method that multiplies both x and y by a single number (scalar multiplication)</p>
+</div>
+<div class="slide" id="modules-and-packages">
+<h1>Modules and Packages</h1>
+<ul class="simple">
+<li>Python code is organized into modules and packages.</li>
+<li><em>Modules</em> are individual Python files.</li>
+<li><em>Packages</em> are directories that contain Python modules</li>
+<li>Modules and packages are used to distribute re-usable code.</li>
+</ul>
+</div>
+<div class="slide" id="standard-library">
+<h1>Standard Library</h1>
+<ul>
+<li><p class="first">Python has a philosophy of &quot;batteries included&quot;.</p>
+</li>
+<li><p class="first">LOTS of modules/packages bundled with Python.</p>
+</li>
+<li><p class="first">Examples:</p>
+<pre class="literal-block">
+os
+zlib
+datetime
+hashlib
+threading
+socket
+unittest
+</pre>
+</li>
+<li><p class="first">External packages, too, like SciPy, NumPy, PyCUDA, Django, SQLAlchemy, Pygments, etc</p>
+</li>
+</ul>
+</div>
+<div class="slide" id="using-packages-and-modules">
+<h1>Using packages and modules</h1>
+<p>2 forms:</p>
+<ul class="simple">
+<li><tt class="docutils literal">import os</tt></li>
+<li><tt class="docutils literal">from os import path</tt></li>
+</ul>
+</div>
+<div class="slide" id="getting-help-with-packages-modules">
+<h1>Getting help with packages/modules</h1>
+<ul class="simple">
+<li>Use the <tt class="docutils literal">dir</tt> function to inspect an object's members, packages and modules included</li>
+<li>Use the <tt class="docutils literal">help</tt> function to get help for an object.</li>
+</ul>
+<p>Example (output shortened):</p>
+<pre class="literal-block">
+&gt;&gt;&gt;&gt; import os
+&gt;&gt;&gt; dir(os)
+[.... 'walk', 'write']
+&gt;&gt;&gt; help(os.walk)
+Help on function walk in module os:
+
+walk(top, topdown=True, onerror=None, followlinks=False)
+    Directory tree generator.
+</pre>
+</div>
+<div class="slide" id="exercise-5">
+<h1>Exercise 5</h1>
+<p>Using the vector class we created last time, add a <tt class="docutils literal">length</tt> method to your vector class
+that does the following:</p>
+<ul class="simple">
+<li>Squares x and y (<tt class="docutils literal">**</tt> is the exponential operator)</li>
+<li>Add the squares together</li>
+<li>Return the square root of that sum</li>
+</ul>
+<p>Use the <tt class="docutils literal">sqrt</tt> function from the <tt class="docutils literal">math</tt> package.</p>
+</div>
+<div class="slide" id="python-2-or-3">
+<h1>Python 2 or 3?</h1>
+<p>For most things, Python 2 is probably the best choice.</p>
+<ul class="simple">
+<li>More mature libraries available</li>
+<li>Better tested</li>
+</ul>
+<p>However, Python 3 is the future.</p>
+<ul class="simple">
+<li>Python 2.7 is the last release of the 2 line.</li>
+<li>Overall, a much better language.</li>
+</ul>
+</div>
+<div class="slide" id="further-resources">
+<h1>Further Resources</h1>
+<ul>
+<li><p class="first">Python Homepage: <a class="reference external" href="http://python.org">http://python.org</a></p>
+</li>
+<li><p class="first">Learn Python the Hard Way: <a class="reference external" href="http://learnpythonthehardway.org/">http://learnpythonthehardway.org/</a> (2nd edition released today!)</p>
+</li>
+<li><p class="first">Learning the Zen of Python - from the Python prompt, type::</p>
+<pre class="literal-block">
+import this
+</pre>
+</li>
+<li><p class="first">Also: The Pragmatic Programmer, by Andrew Hunt and David Thomas</p>
+</li>
+</ul>
+</div>
+</div>
+</body>
+</html>

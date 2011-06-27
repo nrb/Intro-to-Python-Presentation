@@ -1,4 +1,3 @@
-
 History of Python
 =================
 Developed by Guido von Rossum in 1989 at CWI
@@ -387,7 +386,7 @@ Making the connection
 
 Defining a class
 ================
-Example:::
+Example::
 
         >>>> class Dog(object):
         ...     def __init__(self, name=None, breed=None):
